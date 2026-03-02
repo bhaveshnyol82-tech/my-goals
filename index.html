@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Goals</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>My Goals</header>
+
+<nav>
+<button onclick="showSection('dashboard')">Dashboard</button>
+<button onclick="showSection('workout')">Workout</button>
+<button onclick="showSection('calories')">Calories</button>
+<button onclick="showSection('weight')">Weight</button>
+<button onclick="showSection('bmi')">BMI</button>
+</nav>
+
+<section id="dashboard" class="active">
+<h2>Today Overview</h2>
+<p id="dashCalories"></p>
+<p id="dashWorkout"></p>
+<p id="dashWeight"></p>
+</section>
+
+<section id="workout">
+<h2>Workout</h2>
+<input type="date" id="workoutDate">
+<select id="daySelect"></select>
+<div id="exerciseList"></div>
+<input type="text" id="newExercise" placeholder="Add Exercise">
+<button onclick="addExercise()">Add</button>
+</section>
+
+<section id="calories">
+<h2>Calories</h2>
+<input type="date" id="calorieDate">
+<input type="text" id="foodName" placeholder="Food">
+<input type="number" id="calorieAmount" placeholder="Calories">
+<button onclick="addCalorie()">Add</button>
+<div id="calorieList"></div>
+<h3 id="calorieTotal"></h3>
+</section>
+
+<section id="weight">
+<h2>Weight</h2>
+<input type="number" id="weightInput" placeholder="Weight (kg)">
+<button onclick="addWeight()">Save</button>
+<ul id="weightHistory"></ul>
+<canvas id="weightChart"></canvas>
+</section>
+
+<section id="bmi">
+<h2>BMI</h2>
+<input type="number" id="height" placeholder="Height (cm)">
+<input type="number" id="bmiWeight" placeholder="Weight (kg)">
+<button onclick="calculateBMI()">Calculate</button>
+<h3 id="bmiResult"></h3>
+</section>
+
+<section>
+<button onclick="exportData()">Export Backup</button>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
